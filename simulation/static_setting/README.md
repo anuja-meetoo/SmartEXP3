@@ -11,7 +11,7 @@ A brief description of the files is as follows:
 * processCSVfile_mean_sd_convergence_multiprocessing.py: Extracts and saves details pertaining to per run convergence, rate or convergence and stability; per device gain, regret and number of network switches.
 * computeNumNetworkSwitchPerTimeStep.py: Computes the number of network switch per time step for every run; and on average over all runs.
 * computeDistanceToNE.py: Compute average per time slot distance to NE over all runs.
-* computeAverageGainRegretParallel.py: 
+* computeAverageGainRegretParallel.py: Calculates average gain and average regret of all devices per iteration across all runs.
 * extractResetTimeSlot.py: Computes the minimum, maximum, average and median number of resets and extracts and outputs (in the proper format for pgfplot) the time slot at which there was a reset.
 * extractLoss.py: Computes per run loss due to switching networks and unutilized network.
 * combineDistanceToNE.py: Reads the distance to NE of each algorithm, compute their rolling average and save the later into a single CSV file; useful for plot.
