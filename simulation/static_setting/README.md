@@ -8,7 +8,7 @@ A brief description of the files is as follows:
 * createCSVfile.py: Creates the csv files to save per iteration details corresponding to individual devices, number of devices per network (network.csv) and the iteration when the algorithm was first at Nash equilibrium (rateOfConvergence.csv), each with the appropriate headers; one file is created for each parallel run.
 * processResults.sh: Processes the simulation results, and extracts and saves the required details; a copy of the latter is also saved in a separate folder 'dataRates_numUser_numNetwork_processedResult'.
 * NetworkGraph.py: Used in determining which devices may switch network to reach a Nash equilibrium state when computing the distance to Nash equilibrium.
-* processCSVfile_mean_sd_convergence_multiprocessing.py: 
+* processCSVfile_mean_sd_convergence_multiprocessing.py: Extracts and saves details pertaining to per run convergence, rate or convergence and stability; per device gain, regret and number of network switches.
 * computeNumNetworkSwitchPerTimeStep.py: 
 * computeDistanceToNE.py: Compute average per time slot distance to NE over all runs.
 * computeAverageGainRegretParallel.py: 
