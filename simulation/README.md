@@ -1,1 +1,1 @@
-
+Simulates the wireless network selection, when all time-synchroized clients start the algorithm at the same time and have access to the same set of networks. It is assumed that clients observe an equal share of a network's bandwidth. The cost of switching networks is measured in terms of delay and is modeled using Johnson's SU distribution for WiFi and Student's t-distribution for cellular, each identified as a best fit to 500 delay values. 
