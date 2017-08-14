@@ -15,3 +15,4 @@ A brief description of the files is as follows:
 * extractResetTimeSlot.py: Computes the minimum, maximum, average and median number of resets and extracts and outputs (in the proper format for pgfplot) the time slot at which there was a reset.
 * extractLoss.py: Computes per run loss due to switching networks and unutilized network.
 * combineDistanceToNE.py: Reads the distance to NE of each algorithm, compute their rolling average and save the later into a single CSV file; useful for plot.
+* convergence_stability.py: Extracts the percentage runs that converged, percentage runs that converged to Nash equilibrium, and the percentage time a run spends at the converged state.
