@@ -3,4 +3,8 @@ Simulates wireless network selection in a static setting where time-synchronized
 A brief description of the files is as follows:
 * wns_greedyDevices.py
 * simulation.py
-*
+* experiments_parallel.sh
+* experiment.sh
+* processResults.sh
+* computeDistanceToNE.py
+* combineDistanceToNE.py
