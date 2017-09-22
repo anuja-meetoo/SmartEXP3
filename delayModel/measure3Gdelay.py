@@ -1,3 +1,8 @@
+'''
+@description: measures the delay incurred when switching from WiFi to 3G (3G connection via tethered mobile phone);
+connection and disconnection involves enabling/disabling 3G on the phone by sending the appropriate adb shell command
+'''
+
 #!/usr/bin/python3
 import subprocess
 from time import sleep, time
