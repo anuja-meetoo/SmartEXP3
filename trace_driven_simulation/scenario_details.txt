@@ -1,0 +1,26 @@
+Location: YIH near computer room and Starbucks
+
+- scenario 1:
+Start the experiment outside near computer room on the stairs to dance studio and then move to Starbucks and stay inside.
+Aim: Greedy wrongly estimates WiFi as bad and selects 3G throughout. Quality of 3G (network selected by greedy) remains more or less the same, while that of WiFi improves.
+
+- scenario 2:
+Start the experiment in Starbucks and then move towards computer room and on the stairs to dance studio.
+Aim: Greedy wrongly estimates WiFi as being the "best" and selects it throughout. Quality of WiFi (network selected by greedy) degrades over
+
+- scenario 3:
+Start the experiment outside near computer room on the stairs to dance studio and then move to Starbucks and return to the starting place after some time.
+(2 traces 3a and 3b)
+trace 3b - downloading a file on phone on 3G to add load to keep its bit rate lower than for WiFi; when came inside till end or run.
+Aim: The "best" network changes from 3G to WiFi and 3G again; demonstrate how the algorithms behave in such a dynamic environment.
+
+- scenario 4:
+Start from near washroom, move to the stairs towards dance studio, then walk towards Starbucks, stay close to the front for some time, then leave towards stairs in the opposite direction of dance studio.
+Aim: See how the quality of the networks fluctuate and how the algorithms respond.
+
+- scenario 5: 
+Stay inside Starbucks.
+Aim: Show how the algorithms behave when the quality (or relative quality) of the networks is rather stable. 
+
+- scenario 6:
+Start the experiment in Starbucks and then move towards computer room and on the stairs to dance studio and stay there; put load on 3G by downloading a file to keep its quality lower than WiFi initially and at end (attempted to have it lower).
