@@ -1,3 +1,7 @@
+'''
+@description: measures the delay incurred when switching between two WiFi networks
+'''
+
 #!/usr/bin/python3
 import subprocess
 from time import sleep, time
