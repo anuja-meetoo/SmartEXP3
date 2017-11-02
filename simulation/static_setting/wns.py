@@ -1,25 +1,5 @@
-#####
-# 1. explore each network at start - DONE
-# 2. Network quality drop -> reset
-# 3. greedy with > 1 network having highest avg gain - DONE
-# 4. Proper prob value to compute estimated gain - DONE
-#     - probability for exploration depends on number of networks not yet explored
-# change probability distribution to simulate delay - update computeDelay() ----- need a way to differentiate between type of each network  - DONE; only wifi in this simulation
-
-##### updates made @Tuesday 28 March 2017
-# added attribute self.greedyStaySameNet; set it to zero at top in selection functions
-# updated greedy to call selectGreedy
-# updated selectGreedy method to stay in same network when choosing greedily and >1 networks with same highest gain
-# updated computeEstimatedGain; the probability for the above new case
-# update calls to selectGreedy and computeEstimatedGain to pass the appropriate new parameters
-##### updates made @Tuesday 28 March 2017
-
-### ignore switching cost when performing a selection
-### update weight and probability at every time slot
-### delay is a random variable
-### change made: maxProbDiff = 1/(k - 1), it is no longer logarithmic...
 '''
-@description: Wireless network selection using the Exp3 (original Exp3 and block Exp3), greedy, or exponential weighted average (for full information model and adversarial MAB setting)
+@description: Implements a number of appraoches to perform a wireless network selection
 @author: Anuja
 @version: V2.0
 @assumptions:
