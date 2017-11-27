@@ -1,5 +1,5 @@
 '''
-@description: Implements a number of appraoches to perform a wireless network selection
+@description: Implements a number of approaches to perform a wireless network selection
 @author: Anuja
 @version: V2.0
 @assumptions:
