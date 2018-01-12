@@ -1,4 +1,4 @@
-Simulates wireless network selection in a setting where 20 devices are time-synchronized and have access to the same set of 3 wireless networks. While some devices are in the service area throughout the experiment, others join and leave the area at different times. All devices leverage the same selection approach.
+Simulates wireless network selection in a setting where devices are time-synchronized and have access to the same set of wireless networks. While some devices are in the service area throughout the experiment, others join and leave the area at different times. All devices leverage the same selection approach.
 
 A brief description of the files is as follows:
 * wns_dynamicEnc_setup1.py: Simulates the wireless network selection process using different algorithms in a setting where 9 devices join late and leave early; the run is divided into 3 phases of equal time; 9 devices (device IDs 12 - 20) join at the beginning of phase 2 and leave at the end that phase; some parameters for the algorithms are set in this file.
