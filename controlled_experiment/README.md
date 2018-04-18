@@ -63,17 +63,21 @@ Run the following command to set the bandwidth limit (must be run everytime you 
 ```
 tc qdisc add dev br-lan root tbf rate <bandwidth>mbit burst 30kb latency 50ms
 ```
+For example, the following command sets the bandwidth limit of 16 Mbps:
+```
+tc qdisc add dev br-lan root tbf rate 16mbit burst 30kb latency 50ms
+```
 To disable the rate limit, you run the following command:
 ```
 tc qdisc del dev br-lan root
 ```
 
-# Setting up the servers 
+## Setting up the servers 
 
 
-# Setting up the clients
+## Setting up the clients
 
-# Running the experiment
+## Running the experiment
 1. Start the servers by running the following command on them:
    ?
 2. Start clients by executing the following command on them:
