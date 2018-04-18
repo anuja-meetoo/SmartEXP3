@@ -2,6 +2,11 @@ Simulates wireless network selection in a static setting where time-synchronized
 
 # Running the simulation
 1. Set the values of the following parameters in the file simulation.py:
+   * number of active devices (numUser).
+   * number of wireless networks in the service area (numNetwork).
+   * total bandwith of each of the wireless networks, separated by an underscore, e.g. "4_7_22" (networkDataRate).
+   * number of simualtion runs to execute (numRun).
+   
 numUser=20
 numNetwork=3
 networkDataRate="4_7_22"	#"11_11_11"
