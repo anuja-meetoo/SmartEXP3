@@ -11,9 +11,9 @@ Devices run Smart EXP3 or Greedy and receive data from the server. They are sync
 **lan cables - how to connect the devices... config...**
 
 ## Setting up the WiFi APs
-The routers did not have a web interface (GUI) due to lack of space on the device. Hence, the APs were set up as follows.
+The APs are setup as follows.
 ### Allow ssh from wan <br> 
-  Add the following lines in /etc/config/firewall:
+  First of all, enable ssh on the router, by adding the following lines in /etc/config/firewall:
   ```
   config rule                     
     option src              wan   
@@ -26,7 +26,7 @@ The routers did not have a web interface (GUI) due to lack of space on the devic
 ### Change its IP on lan  
   Edit the file /etc/config/network to set the **?**.
   
-### Set the SSID and password  
+### Enable WiFi and set the channel, SSID and password for the network 
   Edit the file /etc/config/wireless with the right SSID (option ssid <ssid>), password (option key <password>) and WiFi channel, and enable WiFi. The channel of the 3 WiFi APs were set to 1, 6 and 11. An example of the file is as follows:
   ```
   config wifi-device      radio0
@@ -55,9 +55,9 @@ opkg install tc iptables-mod-ipopt
 opkg install kmod-sched
 insmod sch_tbf
 ```
-Note: 
- * You might need to update the nameserver in the file /etc/resolv.conf to get Internet connection for installing the packages.
- * If you encounter [problems installing the packages due to insufficient memory](Source:https://stackoverflow.com/questions/34112053/openwrt-cant-install-packages-memory-issue), comment out everything but base and luci, the first two in file /etc/opkg/distfeeds.conf.
+Notes: 
+ * You might need to update the nameserver in the file /etc/resolv.conf for Internet connection.
+ * If you encounter [problems installing the packages due to insufficient memory](Source:https://stackoverflow.com/questions/34112053/openwrt-cant-install-packages-memory-issue), comment out everything but base and luci (first two) in file /etc/opkg/distfeeds.conf.
 
 Run the following command to set the bandwidth limit (must be run everytime you power up the AP or you might set the command in the appropriate file for execution at startup):
 ```
