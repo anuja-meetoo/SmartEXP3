@@ -5,9 +5,9 @@
 
 # Setting up the WiFi APs
 The routers did not have a web interface (GUI) due to lack of space on the device. Hence, the following commands were used to set up the AP.
-#H6 Add a root password <br>
-  Type the following command and then set the password: passwd 
-<dd>#H6Allow ssh from wan
+###### H6 Add a root password <br>
+  Type the following command and then set the password: passwd <br>
+<dd>###### H6 Allow ssh from wan
  
   Add the following lines in /etc/config/firewall:
   
