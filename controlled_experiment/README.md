@@ -1,3 +1,5 @@
+Smart EXP3 is evaluated in a 'controlled setting' where we set the bandwidth limit of each AP and we have control over the number of active wireless devices in the environment.
+
 ## Setup
 The setup consists of:
   * 3 WiFi routers (TP-Link TL-WR841N) running OpenWRT (Designated driver - Bleeding Edge, 50140) and operating on 2.4GHz with bandwidth limits set to 4, 7 and 22 Mbps and channels 11, 6 and 1.
