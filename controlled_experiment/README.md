@@ -3,7 +3,7 @@
 3 WiFi routers (ref?) running OpenWRT (version?) and ? raspberry pis (versions 2 and 3).
 
 
-# Setting up the WiFi APs
+## Setting up the WiFi APs
 The routers did not have a web interface (GUI) due to lack of space on the device. Hence, the following commands were used to set up the AP.
 ### Allow ssh from wan <br> 
   Add the following lines in /etc/config/firewall:
