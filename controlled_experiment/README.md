@@ -27,7 +27,7 @@ The APs are setup as follows.
   Edit the file /etc/config/network to set the **?**.
   
 ### Enable WiFi and set the channel, SSID and password for the network 
-  Edit the file /etc/config/wireless with the right SSID (option ssid `<ssid>`), password (option key `<password>`) and WiFi channel (option channel `<wifi_channel>`), and enable WiFi. The channel of the 3 WiFi APs were set to 1, 6 and 11. An example of the file is as follows:
+  Edit the file /etc/config/wireless with the right SSID (option ssid \<ssid>), password (option key \<password>) and WiFi channel (option channel \<wifi_channel>), and enable WiFi. The channel of the 3 WiFi APs were set to 1, 6 and 11. An example of the file is as follows:
   ```
   config wifi-device      radio0
         option type       mac80211
