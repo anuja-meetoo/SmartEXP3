@@ -2,17 +2,15 @@
 3 WiFi routers **(ref?)** running OpenWRT **(version?)** and ? raspberry pis (versions 2 and 3).
 
 The setup consists of:
-  * 3 WiFi routers (ref?) running OpenWRT (version?) and operating on 2.4GHz with bandwidth set to 4, 7 and 22 Mbps.
-  * 2 laptops, each running a TCP server that continuously sends data to its clients (a request is sent to an alternate server when one fails to respond).
+  * 3 WiFi routers (TP-Link TL-WR841N) running OpenWRT (Designated driver - Bleeding Edge, 50140) and operating on 2.4GHz with bandwidth limits set to 4, 7 and 22 Mbps and channels 11, 6 and 1.
+  * 2 laptops, each running a TCP server that continuously sends data to its clients (a request is sent to an alternate server when one fails to respond). Although they download data over WiFi, the clients are also conected to the servers through cables to enable us to ssh to them and run the commands without interfering with the wireless networks.
   * 14 raspberry pis that act as clients.
-  * A main AP that connects the servers and 3 WiFi APs through LAN cables. 
+  * A main router (Linksys WRT54GL) running OpenWRT that connects the servers and 3 WiFi APs through LAN cables. 
 Devices run Smart EXP3 or Greedy and receive data from the server. They are synchronized, with drift of less than one second. Switching networks is implemented by closing and establishing new network and TCP connections. Gain is estimated based on the download during the time spent in a network. 
-
-**lan cables - how to connect the devices... config...**
 
 ## Setting up the WiFi APs
 The APs are setup as follows.
-### Allow ssh from wan <br> 
+#### Allow ssh from wan <br> 
   First of all, enable ssh on the router, by adding the following lines in /etc/config/firewall:
   ```
   config rule                     
