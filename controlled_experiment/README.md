@@ -48,7 +48,7 @@ The APs are setup as follows.
 ```
 
 ### Set bandwidth limit
-Install the following packages and insert the specified module in kernel. 
+Install the following [packages](https://wiki.openwrt.org/doc/howto/packet.scheduler/packet.scheduler) and insert the specified module in kernel. 
 ```
 opkg update
 opkg install tc iptables-mod-ipopt
