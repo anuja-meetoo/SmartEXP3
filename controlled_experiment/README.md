@@ -8,6 +8,8 @@ The setup consists of:
   * A main AP that connects the servers and 3 WiFi APs through LAN cables. 
 Devices run Smart EXP3 or Greedy and receive data from the server. They are synchronized, with drift of less than one second. Switching networks is implemented by closing and establishing new network and TCP connections. Gain is estimated based on the download during the time spent in a network. 
 
+**lan cables - how to connect the devices... config...**
+
 ## Setting up the WiFi APs
 The routers did not have a web interface (GUI) due to lack of space on the device. Hence, the APs were set up as follows.
 ### Allow ssh from wan <br> 
@@ -27,41 +29,44 @@ The routers did not have a web interface (GUI) due to lack of space on the devic
 ### Set the SSID and password  
   Edit the file /etc/config/wireless with the right SSID (option ssid <ssid>), password (option key <password>) and WiFi channel, and enable WiFi. The channel of the 3 WiFi APs were set to 1, 6 and 11. An example of the file is as follows:
   ```
-  config wifi-device  radio0
-        option type     mac80211
-        option channel  **<wifi_channel>**
-        option hwmode   11bgn
-        option path     'platform/qca953x_wmac'
-        option htmode   HT20
+  config wifi-device      radio0
+        option type       mac80211
+        option channel    <wifi_channel>
+        option hwmode     11bgn
+        option path       'platform/qca953x_wmac'
+        option htmode     HT20
         # COMMENT THE FOLLOWING LINE TO ENABLE WIFI
-        #option disabled 1
+        #option disabled  1
 
   config wifi-iface
-        option device   radio0
-        option network  lan
-        option mode     ap
-        option ssid     **<ssid>**
+        option device     radio0
+        option network    lan
+        option mode       ap
+        option ssid       <ssid>
         option encryption psk
-        option key **<password>**
+        option key        <password>
 ```
 
 ### Set bandwidth limit
+Install the following packages and insert the specified module in kernel. 
 ```
 opkg update
 opkg install tc iptables-mod-ipopt
 opkg install kmod-sched
 insmod sch_tbf
 ```
-To be able to run opkg update, update the /etc/resolv.conf file with the ip of the main router
-nameserver ***.***.***.***
+Note: 
+ * You might need to update the nameserver in the file /etc/resolv.conf to get Internet connection for installing the packages.
+ * If you encounter [problems installing the packages due to insufficient memory](Source:https://stackoverflow.com/questions/34112053/openwrt-cant-install-packages-memory-issue), comment out everything but base and luci, the first two in file /etc/opkg/distfeeds.conf.
 
-If problem installing due to insufficient memory:
-Go into /etc/opkg/distfeeds.conf and comment out everything but base and luci, the first two. (Source:https://stackoverflow.com/questions/34112053/openwrt-cant-install-packages-memory-issue)
-
-tc qdisc add dev br-lan root tbf rate 16mbit burst 30kb latency 50ms
-
-To disable the rate limit later, you can do the following.
+Run the following command to set the bandwidth limit (must be run everytime you power up the AP or you might set the command in the appropriate file for execution at startup):
+```
+tc qdisc add dev br-lan root tbf rate <bandwidth>mbit burst 30kb latency 50ms
+```
+To disable tje rate limit, you run the following command:
+```
 tc qdisc del dev br-lan root
+```
 
 # Setting up the servers 
 
