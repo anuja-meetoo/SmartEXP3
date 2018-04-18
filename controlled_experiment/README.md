@@ -5,9 +5,9 @@
 
 # Setting up the WiFi APs
 The routers did not have a web interface (GUI) due to lack of space on the device. Hence, the following commands were used to set up the AP.
-###### H6 Add a root password <br>
+## H2 Add a root password <br>
   Type the following command and then set the password: passwd <br>
-<dd>###### H6 Allow ssh from wan
+<dd> ## H2 Allow ssh from wan
  
   Add the following lines in /etc/config/firewall:
   
@@ -81,3 +81,6 @@ commands
    ?
 
 Note: The use of Terminator (https://linux.die.net/man/1/terminator) or iTerm2 (https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
+
+
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
