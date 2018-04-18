@@ -21,13 +21,13 @@ The APs are setup as follows.
     option target           ACCEPT
     option proto            tcp   
   ``` 
-  After 'reboot', it will accept port 22 request (in this case ,ssh request) from wan. <br>
+  After 'reboot', it will accept port 22 request (in this case ,ssh request) from WAN. <br>
   
-### Change its IP on lan  
-  Edit the file /etc/config/network to set the **?**.
+### Change the LAN IP  
+  Edit the file /etc/config/network to set the LAN IP. We set the LAN IPs of the 3 routers to 10.0.0.1, 20.0.0.1 and 30.0.0.1.
   
 ### Enable WiFi and set the channel, SSID and password for the network 
-  Edit the file /etc/config/wireless with the right SSID (option ssid \<ssid>), password (option key \<password>) and WiFi channel (option channel \<wifi_channel>), and enable WiFi. The channel of the 3 WiFi APs were set to 1, 6 and 11. An example of the file is as follows:
+  Edit the file /etc/config/wireless with the right SSID (option ssid \<ssid>), password (option key \<password>) and WiFi channel (option channel \<wifi_channel>), and enable WiFi. We set the SSIDs of the The 3 routers to 'pink', 'green' and 'orange', and their channel to 1, 6 and 11. An example of the file is as follows:
   ```
   config wifi-device      radio0
         option type       mac80211
@@ -63,9 +63,9 @@ Run the following command to set the bandwidth limit (must be run everytime you 
 ```
 tc qdisc add dev br-lan root tbf rate <bandwidth>mbit burst 30kb latency 50ms
 ```
-For example, the following command sets the bandwidth limit of 16 Mbps:
+For example, the following command sets the bandwidth limit of 4 Mbps:
 ```
-tc qdisc add dev br-lan root tbf rate 16mbit burst 30kb latency 50ms
+tc qdisc add dev br-lan root tbf rate 4mbit burst 30kb latency 50ms
 ```
 To disable the rate limit, you run the following command:
 ```
