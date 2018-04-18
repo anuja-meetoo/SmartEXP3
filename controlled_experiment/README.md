@@ -57,7 +57,7 @@ insmod sch_tbf
 ```
 Notes: 
  * You might need to update the nameserver in the file /etc/resolv.conf for Internet connection.
- * If you encounter [problems installing the packages due to insufficient memory](Source:https://stackoverflow.com/questions/34112053/openwrt-cant-install-packages-memory-issue), comment out everything but base and luci (first two) in file /etc/opkg/distfeeds.conf.
+ * If you encounter [problems installing the packages due to insufficient memory](https://stackoverflow.com/questions/34112053/openwrt-cant-install-packages-memory-issue), comment out everything but base and luci (first two) in file /etc/opkg/distfeeds.conf.
 
 Run the following command to set the bandwidth limit (must be run everytime you power up the AP or you might set the command in the appropriate file for execution at startup):
 ```
