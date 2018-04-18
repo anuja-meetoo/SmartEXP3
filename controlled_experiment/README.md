@@ -7,13 +7,13 @@
 The routers did not have a web interface (GUI) due to lack of space on the device. Hence, the following commands were used to set up the AP.
 ### Allow ssh from wan <br> 
   Add the following lines in /etc/config/firewall:
-  ```
+  '''
   config rule                     
     option src              wan   
     option dest_port        22    
     option target           ACCEPT
     option proto            tcp   
-  ```
+  ''' 
   After 'reboot', it will accept port 22 request (in this case ,ssh request) from wan. <br>
   
   * Change its IP on lan
