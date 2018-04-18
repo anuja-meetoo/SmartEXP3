@@ -1,7 +1,26 @@
 Simulates wireless network selection in a static setting where time-synchronized devices are in the service area throughout the experiment and have access to the same set of wireless networks. All devices leverage the same selection approach.
 
 # Running the simulation
-To start the simulation, set the parameter values in the file simulation.py and run the command 'python3 simulation.py'.
+1. Set the values of the following parameters in the file simulation.py:
+numUser=20
+numNetwork=3
+networkDataRate="4_7_22"	#"11_11_11"
+numRun=100 #25
+numParallelRun=5 #20
+timeStepDuration=15
+maxNumIteration =1200
+beta=0.1
+gainScale=1
+maxTimeStepPrevBlock=8
+saveMinimalDetail=1
+
+NElistStr="2,4,14" #"6,7,7;7,6,7;7,7,6"
+epsilonEquilibriumListStr="0"
+convergedProb=0.75
+epsilon=7.5
+
+2. Execute the program by typing './simulation.py' or the command 'python3 simulation.py'.
+
 
 # Brief description of files
 A brief description of the files is as follows:
