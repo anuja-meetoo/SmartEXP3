@@ -1,8 +1,9 @@
+#!/usr/bin/python3
+
 import subprocess
 from time import sleep
 import os
 import traceback
-
 
 algorithmNameList = ["EXP3", "blockEXP3", "hybridBlockEXP3", "stableHybridBlockEXP3", "stableHybridBlockExp3_reset", "greedy", "expWeightedAvgFullInfo", "centralized", "fixedRandom"]
 algorithmIndexList = [(x + 1) for x in range(len(algorithmNameList))]
@@ -10,8 +11,8 @@ algorithmIndexList = [(x + 1) for x in range(len(algorithmNameList))]
 numUser=20
 numNetwork=3
 networkDataRate="4_7_22"	#"11_11_11"
-numRun=100 #25
-numParallelRun=5 #20
+numRun=100 
+numParallelRun=5
 timeStepDuration=15
 maxNumIteration =1200
 beta=0.1
