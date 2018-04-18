@@ -3,3 +3,7 @@ Simulates the selection of wireless networks by time-synchroized devices in thre
 20 users 5 networks
 NE when: [(1, 2, 7, 5, 5)]
 Epsilon equilibrium when: [(1, 2, 7, 6, 4), (1, 2, 8, 5, 4)]
+
+20 users 7 networks
+NE when: [(1, 1, 5, 4, 3, 2, 4)]
+Epsilon equilibrium when: []
