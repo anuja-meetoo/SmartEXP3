@@ -75,17 +75,21 @@ tc qdisc del dev br-lan root
 ### Set the hostname
 Edit sudo nano /etc/hostname and set the name of each client as rpi_\<client_ID>.
 
-### Set the static route
-Add the following to the file /etc/iproute2/rt_tables
-1 admin_wlan0
-2 admin_wlan1
-3 admin_wlan2
-
 ### Turn power management off
 Add the following to the file /etc/rc.local:
 ```
 sudo ifup wlan3_builtIn
 sudo iw dev wlan3_builtIn set power_save off 
+```
+
+### Disable bluetooth
+Run the following to check if bluetooth is on: 
+```
+hciconfig 
+```
+If it is on, turn it off using the following command: 
+```
+hciconfig hci0 down 
 ```
 
 ### Allow ssh without login to the server
@@ -110,16 +114,6 @@ jsmith@local-host$ ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
 ```
 Now, you should be able to logging into the remote machine from the rpi, with "ssh 'remote-host'", without the need to provide any password.
 
-### Disable bluetooth
-Run the following to check if bluetooth is on: 
-```
-hciconfig 
-```
-If it is on, turn it off using the following command: 
-```
-hciconfig hci0 down 
-```
-
 ### Synchronize time using network time protocol (ntp)
 Execute the following commands:
 ```
@@ -129,10 +123,34 @@ sudo /etc/init.d/ntp start
 ```
 
 ## Running the experiment
-1. Copy the file 
-1. Start the servers by running the following command on them:
-   ?
-2. Start clients by executing the following command on them:
-   
+The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
 
-Note: The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
+Servers:
+1. Copy the file server_multiprocessing.py to each of the servers.
+2. Start ther TCP servers by executing the command: 
+```
+./server_multiprocessing.py
+```
+
+Clients:
+1. Copy the files client_multiprocessing.py and client_multiprocessing_dynamic.py to the clients.
+2. Ensure that power management is turned off, Bluetooth is turned off and their time is synchronized (type command *date*).
+3. Set the following in the files client_multiprocessing.py and client_multiprocessing_dynamic.py:
+   * IP addresses of the TCP servers (lines 23 - 24).
+   * username and location in the remote machine where the experiment data will be saved (line 831/850 depending on which of the above 2 files is being used).
+4. Execute the client program.
+   For the static setting, execute the program client_multiprocessing.py as follows:
+   ```
+   python3 client_multiprocessing.py -a <algorithm_name> -m <max_iteration> -b "<network_bandwidth>" -r <run_index> -t <start_time>
+   ```
+   For example:
+   ```
+   python3 client_multiprocessing.py -a smartEXP3 -m 480 -b "4_7_22" -r 1 -t 1499804700
+   ```
+   
+   For a dynamic setting, execute the program client_multiprocessing_dynamic.py as follows:
+   ```
+   python3 client_multiprocessing_dynamic.py -a smartEXP3 -m 480 -b "4_7_22" -r 1 -t 1499804700 -s <start_iteration> -e <end_iteration>
+   ```
+   
+   Per time slot data will be saved in the file \<hostname>_\<algorithmName>_run\<run_index>.csv (e.g. rpi_1_SmartEXP3_run1.csv) and sent to the remote machine (running the secondary server) at the end of the experiment).
