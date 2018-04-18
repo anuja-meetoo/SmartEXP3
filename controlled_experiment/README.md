@@ -9,12 +9,13 @@ The routers did not have a web interface (GUI) due to lack of space on the devic
   Type the following command and then set the password: passwd <br>
 ### Allow ssh from wan <br> 
   Add the following lines in /etc/config/firewall: <br>  
-  config rule <br>  
-  option src              wan <br>  
-  option dest_port        22  <br>  
-  option target           ACCEPT <br>  
-  option proto            tcp <br>
-  <br>
+  <p>
+  config rule                     <br>
+  option src              wan     <br>  
+  option dest_port        22      <br>  
+  option target           ACCEPT  <br>  
+  option proto            tcp     <br>
+  </p>
   After 'reboot', it will accept port 22 request (in this case ,ssh request) from wan. <br>
   
   * Change its IP on lan
@@ -74,7 +75,7 @@ commands
 2. Start clients by executing the following command on them:
    ?
 
-Note: The use of Terminator (https://linux.die.net/man/1/terminator) or iTerm2 (https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
+Note: The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
 
 
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
