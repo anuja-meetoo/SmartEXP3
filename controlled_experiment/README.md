@@ -1,10 +1,13 @@
 ## Setup
 The setup consists of:
   * 3 WiFi routers (TP-Link TL-WR841N) running OpenWRT (Designated driver - Bleeding Edge, 50140) and operating on 2.4GHz with bandwidth limits set to 4, 7 and 22 Mbps and channels 11, 6 and 1.
-  * 2 laptops, each running a TCP server that continuously sends data to its clients (a request is sent to an alternate server when one fails to respond). 
+  * 2 laptops, each running a TCP server (primary and secondary) that continuously sends data to its clients (a request is sent to an alternate server when one fails to respond). 
   * 14 raspberry pis (rpis, versions 2 and 3) that act as clients; those of version 2 were equipped with a LB-Link WiFi USB dongle as they do not have an in-built WiFi interface. Although they download data over WiFi, the clients are also conected to the servers through cables to enable us to ssh to them and run the commands without interfering with the wireless networks.
   * A main router (Linksys WRT54GL) running OpenWRT that connects the servers and 3 WiFi APs through LAN cables. 
 Devices run Smart EXP3 or Greedy and receive data from the server. They are synchronized, with drift of less than one second. Switching networks is implemented by closing and establishing new network and TCP connections. Gain is estimated based on the download during the time spent in a network. 
+
+We ssh to the devices from one of the laptop running the secondary server. Results from the clients are also sent to this laptop at the end of the experiment.
+
 
 ## Setting up the WiFi APs
 The APs are setup as follows.
@@ -86,7 +89,7 @@ sudo iw dev wlan3_builtIn set power_save off
 ```
 
 ### Allow ssh without login to the server
-Type the rpi, type the following command:
+At the end of the experiment, results (stored in a file) are sent to a remote machine (the laptop running the secondary) for processing. To enable the clients to send the file without the need to login to the server, follow the [steps](https://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id) below:
 ```
 ssh-keygen
 ```
@@ -126,12 +129,10 @@ sudo /etc/init.d/ntp start
 ```
 
 ## Running the experiment
+1. Copy the file 
 1. Start the servers by running the following command on them:
    ?
 2. Start clients by executing the following command on them:
-   ?
+   
 
 Note: The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
-
-
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
