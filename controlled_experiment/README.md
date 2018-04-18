@@ -5,23 +5,17 @@
 
 # Setting up the WiFi APs
 The routers did not have a web interface (GUI) due to lack of space on the device. Hence, the following commands were used to set up the AP.
-## H2 Add a root password <br>
+### Add a root password <br>
   Type the following command and then set the password: passwd <br>
-<dd> ## H2 Allow ssh from wan
- 
-  Add the following lines in /etc/config/firewall:
-  
-  config rule
-  
-  option src              wan
-  
-  option dest_port        22
-  
-  option target           ACCEPT
-  
-  option proto            tcp
-  
-  After 'reboot', it will accept port 22 request (in this case ,ssh request) from wan.
+### Allow ssh from wan <br> 
+  Add the following lines in /etc/config/firewall: <br>  
+  config rule <br>  
+  option src              wan <br>  
+  option dest_port        22  <br>  
+  option target           ACCEPT <br>  
+  option proto            tcp <br>
+  <br>
+  After 'reboot', it will accept port 22 request (in this case ,ssh request) from wan. <br>
   
   * Change its IP on lan
   
