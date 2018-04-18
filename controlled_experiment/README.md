@@ -1,9 +1,8 @@
 ## Setup
-<hr>
 The setup consists of:
   * 3 WiFi routers (TP-Link TL-WR841N) running OpenWRT (Designated driver - Bleeding Edge, 50140) and operating on 2.4GHz with bandwidth limits set to 4, 7 and 22 Mbps and channels 11, 6 and 1.
   * 2 laptops, each running a TCP server that continuously sends data to its clients (a request is sent to an alternate server when one fails to respond). 
-  * 14 raspberry pis (versions 2 and 3) that act as clients; those of version 2 were equipped with a LB-Link WiFi USB dongle as they do not have an in-built WiFi interface. Although they download data over WiFi, the clients are also conected to the servers through cables to enable us to ssh to them and run the commands without interfering with the wireless networks.
+  * 14 raspberry pis (rpis, versions 2 and 3) that act as clients; those of version 2 were equipped with a LB-Link WiFi USB dongle as they do not have an in-built WiFi interface. Although they download data over WiFi, the clients are also conected to the servers through cables to enable us to ssh to them and run the commands without interfering with the wireless networks.
   * A main router (Linksys WRT54GL) running OpenWRT that connects the servers and 3 WiFi APs through LAN cables. 
 Devices run Smart EXP3 or Greedy and receive data from the server. They are synchronized, with drift of less than one second. Switching networks is implemented by closing and establishing new network and TCP connections. Gain is estimated based on the download during the time spent in a network. 
 
@@ -70,20 +69,29 @@ tc qdisc del dev br-lan root
 ```
 
 ## Setting up the raspberry pis
-### Set its hostname
+### Set the hostname
 Edit sudo nano /etc/hostname and set the name of each client as rpi_\<client_ID>.
 
-### Set the route
+### Set the static route
 Add the following to the file /etc/iproute2/rt_tables
 1 admin_wlan0
 2 admin_wlan1
 3 admin_wlan2
 
+### Turn power management off
+Add the following to the file /etc/rc.local:
+```
+sudo ifup wlan3_builtIn
+sudo iw dev wlan3_builtIn set power_save off 
+```
 
-Allow ssh without login to the server
-On the rpi:
+### Allow ssh without login to the server
+Type the rpi, type the following command:
+```
 ssh-keygen
+```
 This yields the following...
+```
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/jsmith/.ssh/id_rsa):[Enter key]
 Enter passphrase (empty for no passphrase): [Press enter key]
@@ -92,45 +100,30 @@ Your identification has been saved in /home/jsmith/.ssh/id_rsa.
 Your public key has been saved in /home/jsmith/.ssh/id_rsa.pub.
 The key fingerprint is:
 33:b3:fe:af:95:95:18:11:31:d5:de:96:2f:f2:35:f9 jsmith@local-host
-
+```
 Copy the public key to remote-host using ssh-copy-id
+```
 jsmith@local-host$ ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
-jsmith@remote-host's password:
+```
+Now, you should be able to logging into the remote machine from the rpi, with "ssh 'remote-host'", without the need to provide any password.
 
-Now try logging into the machine, with "ssh 'remote-host'", and check in:
-.ssh/authorized_keys
+### Disable bluetooth
+Run the following to check if bluetooth is on: 
+```
+hciconfig 
+```
+If it is on, turn it off using the following command: 
+```
+hciconfig hci0 down 
+```
 
-
-
-Turn power management off
-iw dev wlan0 set power_save off
-sudo iw dev wlan3_builtIn set power_save off
-
-Add to /etc/rc.local
-sudo ifup wlan3_builtIn
-sudo iw dev wlan3_builtIn set power_save off 
-
-
-
-sync time ntp
-
-Before running experiment:
-* Disable bluetooth
-	Run the following to check if bluetooth is on: hciconfig 
-If it is on, turn it off using the following command: hciconfig hci0 down 
-
-* Synchronize time
+### Synchronize time using network time protocol (ntp)
+Execute the following commands:
+```
 sudo /etc/init.d/ntp stop
 sudo ntpd -q -g
 sudo /etc/init.d/ntp start
-
-
-
-
-## Setting up the servers
-
-
-## Setting up the clients
+```
 
 ## Running the experiment
 1. Start the servers by running the following command on them:
