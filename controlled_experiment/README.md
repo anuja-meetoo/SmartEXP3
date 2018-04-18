@@ -7,24 +7,33 @@
 The routers did not have a web interface (GUI) due to lack of space on the device. Hence, the following commands were used to set up the AP.
 * Add a root password 
 
-
   Type the following command and then set the password: passwd 
 
  * Allow ssh from wan
+ 
   Add the following lines in /etc/config/firewall:
+  
   config rule
+  
   option src              wan
+  
   option dest_port        22
+  
   option target           ACCEPT
+  
   option proto            tcp
   
   After 'reboot', it will accept port 22 request (in this case ,ssh request) from wan.
   
   * Change its IP on lan
+  
   Edit the file /etc/config/network
-To set ssid and password
-Edit /etc/config/wireless
-config wifi-device  radio0
+  
+  * Set the SSID and password
+  
+  Edit the file /etc/config/wireless with the right SSID (option ssid <ssid>) and password (option key <password>) and enable   WiFi An example of the file is as follows:
+  
+  config wifi-device  radio0
         option type     mac80211
         option channel  1
         option hwmode   11bgn
