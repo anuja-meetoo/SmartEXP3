@@ -1,5 +1,7 @@
-# Setting up the WiFi AP
+# Setup
 
-# Setting up the server 
+# Setting up the WiFi APs
+
+# Setting up the servers 
 
 # Setting up the clients
