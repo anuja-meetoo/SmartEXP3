@@ -94,8 +94,8 @@ sudo con remove <uuid-of-connection>  % to remove the specified connection; to l
 ### Turn power management off
 Add the following to the file /etc/rc.local:
 ```
-sudo ifup wlan3_builtIn
-sudo iw dev wlan3_builtIn set power_save off 
+sudo ifup <wlan_interface>
+sudo iw dev <wlan_interface> set power_save off 
 ```
 
 ### Disable bluetooth
