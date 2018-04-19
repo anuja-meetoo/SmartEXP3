@@ -17,8 +17,8 @@ Share the cellular data connection of a mobile phone with the laptop by followin
 2. Go to Settings; choose Connections, Mobile Hotspot and tethering, and USB tethering.
 
 ## Running the experiment
-* Set the following parameters in file resumeDownload_periodic.py program:
-  * value of the parameter lteUUID to the UUID of the tethered phone, obtained using the command 'nmcli con list' (line 56).
+* Set the value of the following parameters in file resumeDownload_periodic.py program:
+  * lteUUID to the UUID of the tethered phone, obtained using the command 'nmcli con list' (line 56).
   * If you want to download another file, set the value of the parameter 'url' accordingly (line 66).
 * Start the experiment by running the resumeDownload_periodic.py program:
   ```
