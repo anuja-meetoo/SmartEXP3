@@ -6,9 +6,22 @@ A selection had to be made between 2 wireless networks, namely a public WiFi net
 ## Setting up the laptop
 ### Installing required libraries
 ```
-pip3 install urllib3
 apt-get install python3-pip
+pip3 install urllib3
 apt-get install python3-pycurl
+```
+
+### Setup the WiFi connection
+Add new WiFi connections for each of the 3 WiFi networks using the following command:
+```
+sudo nmcli device wifi connect <SSID> password <password>
+```
+
+You might try the following commands:
+```
+sudo nmcli con up <SSID>              % to connect to the network with SSID <SSID>
+sudo nmcli con down <SSID>            % to disconnect from the network with SSID <SSID>
+sudo con remove <uuid-of-connection>  % to remove the specified connection; to lookup the uuid, type “sudo con show”
 ```
 
 ## Running the experiment
