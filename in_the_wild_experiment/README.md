@@ -1,5 +1,8 @@
-Evaluates the performance of Smart EXP3 and greedy through in-the-wild experiments.
+Evaluates the performance of Smart EXP3 and greedy through in-the-wild experiments, e.g. in a coffee shop; we neither have control over the total bandwith of the wireless networks nor the number of active devices in the service area.
 
+## Running the experiment
+
+## Brief description of files 
 A brief description of the files is as follows:
 * resumeDownload_periodic.py: Downloads a file from the internet, while selecting and connecting to the best network.
 * getCellLoad.py: Type *#0011* on the tethered mobile phone's keypad to enter service menu where the cellular load is displayed on the screen. Then run this program to save the cellular load.
