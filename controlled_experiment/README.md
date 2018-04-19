@@ -140,7 +140,7 @@ The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](http
   * Ensure that power management is turned off, Bluetooth is turned off and their time is synchronized (type command *date*).
   * Set the following in the files client_multiprocessing.py and client_multiprocessing_dynamic.py:
     * IP addresses of the TCP servers (lines 23 - 24).
-    * username and location in the remote machine where the experiment data will be saved (line 831/850 depending on which of the above 2 files is being used).
+    * username to access the remote machine and location in the remote machine where the experiment data will be saved (line 831/850 depending on which of the above 2 files is being used).
  * Execute the client program.
    For the static setting, execute the program client_multiprocessing.py as follows:
    ```
