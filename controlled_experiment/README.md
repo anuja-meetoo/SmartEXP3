@@ -2,7 +2,7 @@ Smart EXP3 is evaluated in a 'controlled setting' where we set the bandwidth lim
 
 ## Setup
 The setup consists of:
-  * A main router (Linksys WRT54GL) running OpenWRT (we connect it to the Internet to download files/packages during setup phase).
+  * A main router (Linksys WRT54GL) running OpenWRT (connected to the Internet to download files/packages for setup).
   * 3 WiFi routers (TP-Link TL-WR841N) running OpenWRT (Designated driver - Bleeding Edge, 50140) and operating on 2.4GHz with bandwidth limits set to 4, 7 and 22 Mbps and channels 11, 6 and 1; they are connected to the main router through LAN cables.
   * 2 laptops (primary and secondary), each running a TCP server that continuously sends data to its clients (a request is sent to an alternate server when one fails to respond); they are connected to the main router through cables (using an Ethernet hub as there are not enough ports on the router).
   * 14 raspberry pis (rpis), versions 2 and 3, that act as clients; rpis 2 were equipped with a LB-Link WiFi USB dongle as they do not have an in-built WiFi interface. Although they download data over WiFi, the clients are also conected to the servers through cables to enable us to ssh to them and run the commands without interfering with the wireless networks.  
