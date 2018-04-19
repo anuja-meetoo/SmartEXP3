@@ -54,7 +54,6 @@ import pandas
 
 ### global parameters
 lteUUID = "8922ff30-83f5-33da-818d-2bfc3383fabf"    # USB tethered phone
-# lteUUID = "199a3d51-1f6f-4422-adf5-c4f682f15270" # M1 dongle
 timeSlotDuration = 15
 maxBandwidth = 8 		# MBps
 highProbability = 0.75
@@ -64,10 +63,8 @@ maxTimeSlotConsideredPrevBlock = 8 # for switch back
 beta = 0.1
 totalFileSize = 0			 # size of file to be downloaded
 
-# url = "http://128.199.90.252/100mb.test"
-# url="http://www.hostdime.com.br/2gbfile.tgz"
-url = "http://202.150.221.170//test_random_500mb.zip" # "ftp://speedtest:speedtest@ftp.otenet.gr/test100Mb.db"
-# url = "ftp://speedtest:speedtest@ftp.otenet.gr/test5Gb-a.db"
+url = "http://202.150.221.170//test_random_500mb.zip"
+
 filename = url.split("/")[-1].strip()
 outputTxtFileName = "experiment_data"
 rootDir = os.getcwd() + "/"		# get the current working directory; the downloaded file will be saved there
@@ -702,9 +699,6 @@ def greedy():
         networkToExplore.remove(networkSelected)
     else:  # select the one from which the highest average gain has been observed
         print("explored all networks ----- going to choose greedily...")
-        # averageBytePerNet = list(totalByte / numTimeSlot for totalByte, numTimeSlot in zip(totalBytePerNetwork, numTimeSlotNetworkSelected))
-        # highestAverageByte = max(averageBytePerNet)
-        # networkSelected = availableNetworkID[averageBytePerNet.index(highestAverageByte)]
         networkSelected, numNetworkHighestAverageByte = selectGreedily()
     maxGainPerTimeSlot.append(maxGain)
     return networkSelected
