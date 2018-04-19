@@ -1,7 +1,10 @@
 Evaluates the performance of Smart EXP3 and greedy through in-the-wild experiments, e.g. in a coffee shop. The number of devices and their selection approaches, and the bandwidth limit of available networks are unknown. The mobility of devices entering and leaving the service area are not controlled.
 
 ## Setup
-A selection had to be made between 2 wireless networks, namely a public WiFi network and a cellular network. A laptop, equipped with a built-in WiFi interface and connected to the cellular network through a tethered phone (Android phone), aims to download a [500MB file](http://www.speedtest.com.sg/), while connecting to the optimal network and optimizing on download time.
+A selection had to be made between 2 wireless networks, namely a public WiFi network and a cellular network. The setup consists of:
+* A laptop (equipped with a built-in WiFi interface).
+* A mobile phone (Android phone) to provide connection to the cellular network through USB tethering.
+The aim is to download a [500MB file](http://www.speedtest.com.sg/), while connecting to the optimal network and optimizing on download time.
 
 ## Setting up the laptop
 ### Installing required libraries
