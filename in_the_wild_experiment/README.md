@@ -11,11 +11,26 @@ pip3 install urllib3
 apt-get install python3-pycurl
 ```
 
-
+### Setting up cellular connection
+Share the cellular data connection of a mobile phone with the laptop by following these steps:
+1. Connect a mobile phone (Android phone) with data connection to the laptop using a USB cable.
+2. Go to Settings; choose Connections, Mobile Hotspot and tethering, and USB tethering.
 
 ## Running the experiment
-Smart EXP3 and Greedy were run sequentially on a laptop.
+* Set the value of the parameter lteUUID to the UUID of the tethered phone, obtained using the command 'nmcli con list'.
+* If you want to download another file, set the value of the parameter 'url' accordingly.
+* Start the experiment by running the resumeDownload_periodic.py program:
+```
+./resumeDownload_periodic.py -a <algorithm_name> -l <physical_location> -w <SSID_WiFi_network>
+```
+For example, given that we want to evaluate Smart EXP3 by selecting the optimal network between the WiFi network with SSID 'coffee' and the cellular network and the experiment is being carried out at a coffee shop:
+```
+./resumeDownload_periodic.py -a "smartEXP3" -l "coffee_shop" -w "coffee"
+```
 
+## Monitoring the load of the WiFi network during experiment
+
+## Monitoring the load of the cellular network during experiment
 
 The load of the 2 networks, monitored using Wireshark [10] and by capturing the EcIo values [7] from the mobile phone, varied during the experiments. 
 
