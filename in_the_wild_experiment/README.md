@@ -4,6 +4,7 @@ Evaluates the performance of Smart EXP3 and greedy through in-the-wild experimen
 A selection had to be made between 2 wireless networks, namely a public WiFi network and a cellular network. The setup consists of:
 * A laptop (equipped with a built-in WiFi interface).
 * A mobile phone (Android phone) to provide connection to the cellular network through USB tethering.
+
 The aim is to download a [500MB file](http://www.speedtest.com.sg/), while connecting to the optimal network and optimizing on download time.
 
 ## Setting up the laptop
