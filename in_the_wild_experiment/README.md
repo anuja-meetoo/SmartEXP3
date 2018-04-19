@@ -4,6 +4,12 @@ Evaluates the performance of Smart EXP3 and greedy through in-the-wild experimen
 A selection had to be made between 2 wireless networks, namely a public WiFi network and a cellular network. A laptop, equipped with a built-in WiFi interface and connected to the cellular network through a tethered phone, aims to download a [500MB file](http://www.speedtest.com.sg/), while connecting to the optimal network and optimizing on download time.
 
 ## Setting up the laptop
+### Installing required libraries
+```
+pip3 install urllib3
+apt-get install python3-pip
+apt-get install python3-pycurl
+```
 
 ## Running the experiment
 Smart EXP3 and Greedy were run sequentially on a laptop.
