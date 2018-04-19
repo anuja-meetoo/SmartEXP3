@@ -31,20 +31,29 @@ Share the cellular data connection of a mobile phone with the laptop by followin
 It saves per time slot details of the run in a csv file 'experiment_data_<algorithmName>_<timestamp>_<physical_location>.csv' and some other details in a text file 'experiment_data.txt'.
  
 ## Monitoring the load of the WiFi network during experiment
-* wifiNetworkLoad: WiFi network load is obtained as follows: (1) sniff packets using Sniffer in MacBook (Wireless Diagnostics -> Window -> Sniffer; the channel and width information can be obtained from Wireless Diagnostics -> Window -> Scan), and (2) open the file in WireShark and filter out packets not for the WiFi AP being considered (wlan.addr=='mac of WiFi AP'), (3) from the resulting data, (a) extract the frame size and data rate from each packet, (b) compute the frame transfer duration, given its size and data rate, (c) estimate the load as the fraction of time the medium was busy, i.e. some packet was being transmitted. This program accomplishes (3).
-* extractDataForPlot.py: Gets the following for plotting: (1) bit rate, network selected and timestamp of start of each time slot and end of experiment, (2) computes the cellular load per time slot.
-* wifiLoad_rollingAvg.py: Computes the rolling average of the WiFi load and saves it to a csv file.
-* sniff.py: Sniff on two WiFi networks, periodically listening on one of each of them (was not used).
+* Sniff packets using Sniffer in MacBook (Wireless Diagnostics -> Window -> Sniffer; the channel and width information can be obtained from Wireless Diagnostics -> Window -> Scan).
+* Open the file in [WireShark](http://www.wireshark.org/) and filter out packets not for the WiFi AP being considered (wlan.addr=='mac of WiFi AP').
+* Save the resulting data as a .cap file.
+* Execute wifiNetworkLoad.py to perform the following operations on the data resulting from the above 2 steps:
+  * Extract the frame size and data rate from each packet.
+  * Compute the frame transfer duration, given its size and data rate.
+  * Estimate the load as the fraction of time the medium was busy, i.e. some packet was being transmitted.
+  ```
+  ./wifiNetworkLoad.py - a <algorithm_index> -c <cap_file> -x experiment_file> -o <output_file_url>
+  ```
+  Use algorithm index 1 for 'SmartEXP3' and 2 for 'greedy'.  
+* wifiLoad_rollingAvg.py can be executed to compute the rolling average of the WiFi load and save the result to a csv file.
+* extractDataForPlot.py extracts required details for plotting:
+  * Gets the bit rate, network selected and timestamp of start of each time slot and end of experiment.
+  * Computes the cellular load per time slot.
 
 ## Monitoring the load of the cellular network during experiment
 * Type *#0011* on the tethered mobile phone's keypad to enter service menu where the cellular load, [EcIo values](https://dl.acm.org/citation.cfm?id=2500447), is displayed on the screen. 
 * Execute getCellLoad.py to save the cellular load.
-```
-./getCellLoad.py -a <algorithm_name> -n <cellular_network_type>
-```
-For example,
-```
-./getCellLoad.py -a "smartEXP3" -n "3G"
-```
-
-The load of the 2 networks, monitored using Wireshark [10] and by capturing the EcIo values [7] from the mobile phone, varied during the experiments. 
+  ```
+  ./getCellLoad.py -a <algorithm_name> -n <cellular_network_type>
+  ```
+  For example,
+  ```
+  ./getCellLoad.py -a "smartEXP3" -n "3G"
+  ```
