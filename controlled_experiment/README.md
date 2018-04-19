@@ -113,7 +113,7 @@ At the end of the experiment, results (stored in a file) are sent to a remote ma
 ```
 ssh-keygen
 ```
-This yields the following...
+This yields the following output:
 ```
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/jsmith/.ssh/id_rsa):[Enter key]
