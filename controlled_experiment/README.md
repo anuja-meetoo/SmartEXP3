@@ -128,14 +128,14 @@ sudo /etc/init.d/ntp start
 ## Running the experiment
 The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
 
-Servers:
+* On the servers:
 1. Copy the file server_multiprocessing.py to each of the servers.
 2. Start ther TCP servers by executing the command: 
 ```
 ./server_multiprocessing.py
 ```
 
-Clients:
+* On the clients:
 1. Copy the files client_multiprocessing.py and client_multiprocessing_dynamic.py to the clients.
 2. Ensure that power management is turned off, Bluetooth is turned off and their time is synchronized (type command *date*).
 3. Set the following in the files client_multiprocessing.py and client_multiprocessing_dynamic.py:
