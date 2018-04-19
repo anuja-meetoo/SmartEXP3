@@ -78,6 +78,19 @@ tc qdisc del dev br-lan root
 ### Set the hostname
 Edit sudo nano /etc/hostname and set the name of each client as rpi_\<client_ID>.
 
+### Setup the WiFi connection
+Add new WiFi connections for each of the 3 WiFi networks using the following command:
+```
+sudo nmcli device wifi connect <SSID> password <password>
+```
+
+The following commands might be useful:
+```
+sudo nmcli con up <SSID>              % to connect to the network with SSID <SSID>
+sudo nmcli con down <SSID>            % to disconnect from the network with SSID <SSID>
+sudo con remove <uuid-of-connection>  % to remove the specified connection; to lookup the uuid, type 'sudo con show'
+```
+
 ### Turn power management off
 Add the following to the file /etc/rc.local:
 ```
