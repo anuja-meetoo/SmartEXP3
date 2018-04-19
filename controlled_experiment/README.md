@@ -129,19 +129,19 @@ sudo /etc/init.d/ntp start
 The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
 
 * On the servers:
-  1. Copy the file server_multiprocessing.py to each of the servers.
-  2. Start ther TCP servers by executing the command: 
+  * Copy the file server_multiprocessing.py to each of the servers.
+  * Start ther TCP servers by executing the command: 
 ```
 ./server_multiprocessing.py
 ```
 
 * On the clients:
-1. Copy the files client_multiprocessing.py and client_multiprocessing_dynamic.py to the clients.
-2. Ensure that power management is turned off, Bluetooth is turned off and their time is synchronized (type command *date*).
-3. Set the following in the files client_multiprocessing.py and client_multiprocessing_dynamic.py:
-   * IP addresses of the TCP servers (lines 23 - 24).
-   * username and location in the remote machine where the experiment data will be saved (line 831/850 depending on which of the above 2 files is being used).
-4. Execute the client program.
+  * Copy the files client_multiprocessing.py and client_multiprocessing_dynamic.py to the clients.
+  * Ensure that power management is turned off, Bluetooth is turned off and their time is synchronized (type command *date*).
+  * Set the following in the files client_multiprocessing.py and client_multiprocessing_dynamic.py:
+    * IP addresses of the TCP servers (lines 23 - 24).
+    * username and location in the remote machine where the experiment data will be saved (line 831/850 depending on which of the above 2 files is being used).
+ * Execute the client program.
    For the static setting, execute the program client_multiprocessing.py as follows:
    ```
    python3 client_multiprocessing.py -a <algorithm_name> -m <max_iteration> -b "<network_bandwidth>" -r <run_index> -t <start_time>
