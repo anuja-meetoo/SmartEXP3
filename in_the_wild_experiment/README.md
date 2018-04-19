@@ -1,6 +1,15 @@
-Evaluates the performance of Smart EXP3 and greedy through in-the-wild experiments, e.g. in a coffee shop; we neither have control over the total bandwith of the wireless networks nor the number of active devices in the service area.
+Evaluates the performance of Smart EXP3 and greedy through in-the-wild experiments, e.g. in a coffee shop. The number of devices and their selection approaches, and the bandwidth limit of available networks are unknown. The mobility of devices entering and leaving the service area are not controlled.
+
+## Setup
+A selection had to be made between 2 wireless networks, namely a public WiFi network and a cellular network. A laptop, equipped with a built-in WiFi interface and connected to the cellular network through a tethered phone, aims to download a [500MB file](http://www.speedtest.com.sg/), while connecting to the optimal network and optimizing on download time.
+
+## Setting up the laptop
 
 ## Running the experiment
+Smart EXP3 and Greedy were run sequentially on a laptop.
+
+
+The load of the 2 networks, monitored using Wireshark [10] and by capturing the EcIo values [7] from the mobile phone, varied during the experiments. 
 
 ## Brief description of files 
 A brief description of the files is as follows:
