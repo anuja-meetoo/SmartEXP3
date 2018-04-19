@@ -129,8 +129,8 @@ sudo /etc/init.d/ntp start
 The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](https://www.iterm2.com/) helps to send the same command to multiple devices at the same time. You can split the terminal window into multiple panes, use each pane to ssh into a particular device (server/client), and send the same command to all of them simultaneously.
 
 * On the servers:
-1. Copy the file server_multiprocessing.py to each of the servers.
-2. Start ther TCP servers by executing the command: 
+  1. Copy the file server_multiprocessing.py to each of the servers.
+  2. Start ther TCP servers by executing the command: 
 ```
 ./server_multiprocessing.py
 ```
