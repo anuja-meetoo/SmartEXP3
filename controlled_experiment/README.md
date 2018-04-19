@@ -113,20 +113,9 @@ At the end of the experiment, results (stored in a file) are sent to a remote ma
 ```
 ssh-keygen
 ```
-This yields the following output:
-```
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/jsmith/.ssh/id_rsa):[Enter key]
-Enter passphrase (empty for no passphrase): [Press enter key]
-Enter same passphrase again: [Pess enter key]
-Your identification has been saved in /home/jsmith/.ssh/id_rsa.
-Your public key has been saved in /home/jsmith/.ssh/id_rsa.pub.
-The key fingerprint is:
-33:b3:fe:af:95:95:18:11:31:d5:de:96:2f:f2:35:f9 jsmith@local-host
-```
 Copy the public key to remote-host using ssh-copy-id
 ```
-jsmith@local-host$ ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+anuja@anuja$ ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
 ```
 Now, you should be able to logging into the remote machine from the rpi, with "ssh 'remote-host'", without the need to provide any password.
 
