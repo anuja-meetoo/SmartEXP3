@@ -37,6 +37,14 @@ It saves per time slot details of the run in a csv file 'experiment_data_<algori
 * sniff.py: Sniff on two WiFi networks, periodically listening on one of each of them (was not used).
 
 ## Monitoring the load of the cellular network during experiment
-* getCellLoad.py: Type *#0011* on the tethered mobile phone's keypad to enter service menu where the cellular load is displayed on the screen. Then run this program to save the cellular load.
+* Type *#0011* on the tethered mobile phone's keypad to enter service menu where the cellular load, [EcIo values](https://dl.acm.org/citation.cfm?id=2500447), is displayed on the screen. 
+* Execute getCellLoad.py to save the cellular load.
+```
+./getCellLoad.py -a <algorithm_name> -n <cellular_network_type>
+```
+For example,
+```
+./getCellLoad.py -a "smartEXP3" -n "3G"
+```
 
 The load of the 2 networks, monitored using Wireshark [10] and by capturing the EcIo values [7] from the mobile phone, varied during the experiments. 
