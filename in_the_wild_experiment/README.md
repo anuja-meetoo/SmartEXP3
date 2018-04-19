@@ -11,18 +11,7 @@ pip3 install urllib3
 apt-get install python3-pycurl
 ```
 
-### Setup the WiFi connection
-Add new WiFi connections for each of the 3 WiFi networks using the following command:
-```
-sudo nmcli device wifi connect <SSID> password <password>
-```
 
-You might try the following commands:
-```
-sudo nmcli con up <SSID>              % to connect to the network with SSID <SSID>
-sudo nmcli con down <SSID>            % to disconnect from the network with SSID <SSID>
-sudo con remove <uuid-of-connection>  % to remove the specified connection; to lookup the uuid, type “sudo con show”
-```
 
 ## Running the experiment
 Smart EXP3 and Greedy were run sequentially on a laptop.
