@@ -1,7 +1,7 @@
 Evaluates the performance of Smart EXP3 and greedy through in-the-wild experiments, e.g. in a coffee shop. The number of devices and their selection approaches, and the bandwidth limit of available networks are unknown. The mobility of devices entering and leaving the service area are not controlled.
 
-## Setup
-A selection had to be made between 2 wireless networks, namely a public WiFi network and a cellular network. The setup consists of:
+## Hardware required
+A selection had to be made between 2 wireless networks, namely a public WiFi network and a cellular network. The following are required for the experiment:
 * A laptop (equipped with a WiFi interface).
 * A mobile phone (Android phone) to provide connection to the cellular network through USB tethering.
 
@@ -24,6 +24,8 @@ Share the cellular data connection of a mobile phone with the laptop by followin
 * Set the value of the following parameters in file resumeDownload_periodic.py program:
   * lteUUID to the UUID of the tethered phone, obtained using the command 'nmcli con list' (line 56).
   * If you want to download another file, set the value of the parameter 'url' accordingly (line 66).
+* Create a connection for the public WiFi.
+* Disconnect from all wireless networks.
 * Start the experiment by running the resumeDownload_periodic.py program:
   ```
   ./resumeDownload_periodic.py -a <algorithm_name> -l <physical_location> -w <SSID_WiFi_network>
