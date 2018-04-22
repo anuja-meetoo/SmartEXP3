@@ -1,27 +1,5 @@
-##### when reset due to change in network - restart b to reset gamma (probability is uniform again) ----- and set blockLengthForReset to zero again
-
-##### updates made @May 2017
-# added reset when significant decline in network being selected highest amount of time
-# modified parameters - simulation will be run with time slot duration of 15 seconds
-# reset made in same time slot when condition for same becomes true; earlier it was done one time slot later
-##### updates made @May 3 April 2017
-
-##### updates made @Monday 3 April 2017
-# added attribute self.greedyStaySameNet; set it to zero at top in selection functions
-# updated greedy to call selectGreedy
-# updated selectGreedy method to stay in same network when choosing greedily and >1 networks with same highest gain
-# updated computeEstimatedGain; the probability for the above new case
-# update calls to selectGreedy and computeEstimatedGain to pass the appropriate new parameters
-##### updates made @Monday 3 April 2017
-
 '''
 @description: Wireless network selection using the Exp3 (original Exp3 and block Exp3), greedy, or exponential weighted average (for full information model and adversarial MAB setting)
-@author: Anuja
-@version: v2.0
-@modified: 12 December 2016
-@changes made: update wns_v2 for mobility scenario
- (1) network keeps track of list of users connected to it
- (2) need to update maxGain as available networks change
 '''
 
 DEBUG = 0#-2             # 1 - only output; 2 - more details; 3 - input() after each print statement to wait for user to press a key to continue
