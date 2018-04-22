@@ -358,12 +358,3 @@ out = csv.writer(outfile, delimiter=',', quoting=csv.QUOTE_ALL)
 out.writerow(["Time step", "Total higher gain observable by a user (average over all runs)"])
 for i in range(len(distanceToNE_avgAllRuns)): out.writerow([(i + 1) + iterationNumOffset, distanceToNE_avgAllRuns[i]])
 outfile.close()
-
-'''
-distanceToNE_avgAllRuns, epsilonEquilibriumPoints, distance_timestep_1801 = computeDistanceToNE()
-outfile = open("/home/anuja/Dropbox/simulationProcessedDataFiles_20160408/TEST/allUsers.csv", "w")
-out = csv.writer(outfile, delimiter=',', quoting=csv.QUOTE_ALL)
-out.writerow(["Time step", "Total higher gain observable by a user (average over all runs)"])
-for i in range(len(distance_timestep_1801)): out.writerow([(i + 1) + iterationNumOffset, distance_timestep_1801[i]])
-outfile.close()
-'''
