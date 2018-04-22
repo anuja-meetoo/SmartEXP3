@@ -1,6 +1,5 @@
 Simulates wireless network selection in a static setting where time-synchronized devices are in the service area throughout the experiment and have access to the same set of wireless networks. All devices leverage the same selection approach.
 
-# Brief description of files
 A brief description of the files is as follows:
 * wns.py: Simulates the wireless network selection process using different algorithms; some parameters for the algorithms are set in this file.
 * simulation.py: Simulates the selection process and process the results to extract required information. To start the simulation, set the parameter values in this file and run the command 'python3 simulation.py'.
