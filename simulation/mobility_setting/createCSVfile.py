@@ -1,7 +1,5 @@
 '''
 @description: Creates the rateOfConvergence.csv, network.csv and user files with appropriate headers 
-@author: Anuja
-@date: June 2015
 '''
 
 import csv
