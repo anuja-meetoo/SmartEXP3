@@ -28,5 +28,3 @@ To run any of the simulation (in any setting described above), the following ste
    * **convergedProb**: The probability for a network that would imply that the device has converged to it.
 
 2. Execute the program by typing './simulation.py' or the command 'python3 simulation.py'.
-
-## Expected output
