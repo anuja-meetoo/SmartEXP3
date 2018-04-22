@@ -1,8 +1,5 @@
 '''
 @description: Computes the average gain of all mobile users for each iteration in a specific run
-@author: Anuja
-@date: 17 June 2015
-@version: 1.0
 '''
 
 import csv
