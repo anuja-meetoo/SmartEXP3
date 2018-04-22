@@ -22,9 +22,9 @@ To run any of the simulation (in any setting described above), the following ste
    * **gainScale**: The range of values to which a gain must be scaled, e.g. gainScale = 1 for range [0, 1].
    * **maxTimeStepPrevBlock**: Maximum number of time slots in the preceeding block (starting from the last time slots of that block) whose gain must be considered when taking a switch back decision.
    * **saveMinimalDetail**: Whether you want to save all details (saveMinimalDetail=0) of the simulation run or only a minimal amount of details (saveMinimalDetail=1).
-   * **NElistStr**: Number of devices in each network at each Nask equilibrium states; the number of users separated by a comma and each state separated by a semi-colon, e.g. NElistStr="6,7,7;7,6,7;7,7,6" for networkDataRate="11_11_11".
+   * **NElistStr**: Number of devices in each network at each Nash equilibrium states; the number of users separated by a comma and each state separated by a semi-colon, e.g. NElistStr="6,7,7;7,6,7;7,7,6" for networkDataRate="11_11_11".
    * **epsilon**: The value of epsilon in the context of epsilon-equilibrium.
-   * **epsilonEquilibriumListStr**: Number of devices in each network at epsilon-equilibrium states, specified in the same format as for Nash equilibrium.
+   * **epsilonEquilibriumListStr**: Number of devices in each network at each epsilon-equilibrium states, specified in the same format as for Nash equilibrium.
    * **convergedProb**: The probability for a network that would imply that the device has converged to it.
 
 2. Execute the program by typing './simulation.py' or the command 'python3 simulation.py'.
