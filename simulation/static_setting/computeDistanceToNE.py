@@ -1,6 +1,4 @@
 '''
-@date: 18 April 2016
-@updated: 18 November 2016 - takes care of settigns with multiple NE states - then at each step it selects the NE state that will require the least number of users to move
 @description: Computes distance to NE per time step for each run (individual files) as well over all runs (consolidated file) - in which case it is again the maximum
 '''
 
@@ -133,15 +131,3 @@ out = csv.writer(outfile, delimiter=',', quoting=csv.QUOTE_ALL)
 out.writerow(["Time step", "Average % higher gain observable by a user"])
 for i in range(len(distanceToNE_allRuns)): out.writerow([(i + 1), distanceToNE_allRuns[i]])
 outfile.close()
-
-# NE = [7, 12, 21] # 40 users, 3 networks
-#NE = [13, 25, 42] # 80 users, 3 networks
-#NE = [27, 49, 84] # 160 users, 3 networks
-### 20 users
-#NE = [7, 13] # 2 networks
-#NE = [3, 5, 10, 2] # 4 networks
-#NE = [2, 3, 6, 1, 1, 1, 4, 2] # 8 networks
-#NE = [1, 1, 3, 0, 0, 0, 2, 1, 2, 1, 3, 3, 1, 1, 1, 0] # 16 networks
-#NE = [0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 2, 2, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 2, 2, 1, 0, 0, 0] # 32 networks
-# NE = [3, 6, 11]
-#NE = [0,1,2]
