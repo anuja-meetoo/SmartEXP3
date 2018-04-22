@@ -28,5 +28,5 @@ To run any of the simulation (in any setting described above), the following ste
    * **epsilonEquilibriumListStr**: Number of devices in each network at each epsilon-equilibrium states, specified in the same format as for Nash equilibrium.
    * **convergedProb**: The probability for a network that would imply that the device has converged to it.
       * Note that this value is also set in the wns file.
-2. Depending on the total bandwidth per network, set the network that must be assigned to each device for the centralized approach in the correponding wns.py file (lines 1393 - 1396).
+2. Depending on the total bandwidth per network, set the network that must be assigned to each device for the centralized approach in the correponding wns*.py file, e.g. wns.py or wns_dynamicEnv_setup1.py.
 3. Execute the program by typing './simulation.py' or the command 'python3 simulation.py'.
