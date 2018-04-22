@@ -7,10 +7,10 @@ Simulates the selection of wireless networks by time-synchroized devices in the 
 
 It is assumed that all clients observe an equal share of a network's bandwidth. The cost of switching networks is measured in terms of delay and is modeled using Johnson's SU distribution for WiFi and Student's t-distribution for cellular, each identified as a best fit to 500 delay values.
 
-# Running the simulation
+## Running the simulation
 To run any of the simulation (in any setting described above), the following steps must be followed.
 1. Set the values of the following parameters in the file simulation.py:
-   * list of indices for algorithms to be evaluated (algorithmIndexList); the index of an algorithm is the index at which it is in the list *algorithmNameList* in the file simulation.py + 1, e.g. 1 for EXP3.
+   * list of indices for algorithms whose performance is to be evaluated (algorithmIndexList); the index of an algorithm is the index at which it is in the list *algorithmNameList* in the file simulation.py + 1, e.g. 1 for EXP3.
    * number of active devices (numUser).
    * number of wireless networks in the service area (numNetwork).
    * total bandwith of each of the wireless networks, separated by an underscore, e.g. "4_7_22" (networkDataRate).
@@ -28,3 +28,5 @@ To run any of the simulation (in any setting described above), the following ste
    * the probability for a network that would imply that the device has converged to it (convergedProb).
 
 2. Execute the program by typing './simulation.py' or the command 'python3 simulation.py'.
+
+## Expected output
