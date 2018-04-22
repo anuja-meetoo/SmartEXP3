@@ -44,9 +44,6 @@ echo ">>> DONE!!!"
 cp -r ${copyFromDir} ${resultDir}
 cp nohup* ${resultDir}
 
-#cd ${dataRate}
-#zip -r $zipFileName "${algoName}_${numUser}users_${numNetwork}networks/"
-#scp $zipFileName anuja@"172.26.191.52:/media/anuja/Data/wns_simulationResults/${dataRate}_${numUser}users_${numNetwork}networks/"
-#rm $zipFileName
-#cd ..
-#rm -r $dir
+cd ${dataRate}
+zip -r $zipFileName "${algoName}_${numUser}users_${numNetwork}networks/"
+cd ..
