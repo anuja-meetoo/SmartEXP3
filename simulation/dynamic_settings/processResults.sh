@@ -46,9 +46,6 @@ fi
 cp -r ${copyFromDir} ${resultDir}
 cp nohup* ${resultDir}
 
-#cd ${dataRate}
-#zip -r $zipFileName "${algoName}_${numUser}users_${numNetwork}networks/"
-#scp $zipFileName anuja@"172.26.191.151:/media/anuja/My\ Passport/simulationResults_final/${dataRate}_${numUser}users_${numNetwork}networks_dynamicEnv/"
-#rm $zipFileName
-#cd ..
-#rm -r $dir
+cd ${dataRate}
+zip -r $zipFileName "${algoName}_${numUser}users_${numNetwork}networks/"
+cd ..
