@@ -13,7 +13,7 @@ To run any of the simulation (in any setting described above), the following ste
    * **algorithmIndexList**: List of indices for algorithms whose performance is to be evaluated; the index of an algorithm is the index at which it is in the list *algorithmNameList* in the file simulation.py + 1, e.g. 1 for EXP3.
    * **numUser**: Number of active devices.
    * **numNetwork**: Number of wireless networks in the service area.
-   * **networkDataRate**: Total bandwith of each of the wireless networks, separated by an underscore, e.g. "4_7_22".
+   * **networkDataRate**: Total bandwith of each wireless network separated by an underscore, e.g. "4_7_22".
    * **numRun**: Number of simualtion runs to execute.
    * **numParallelRun**: Number of simulation runs that can execute in parallel; the total number of runs will be *numRun* * *numParallelRun*.
    * **timeStepDuration**: The duration of a time slot in seconds.
