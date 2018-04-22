@@ -1,7 +1,5 @@
 '''
 @description: Computes number of network switch per time step for every run; and on average over all runs
-@author: Anuja
-@data: 10 February 2016
 '''
 
 import csv
