@@ -1,15 +1,5 @@
-### ignore switching cost when performing a selection
-### update weight and probability at every time slot
-### delay is a random variable
-### change made: maxProbDiff = 1/(k - 1), it is no longer logarithmic...
 '''
 @description: Wireless network selection using the Exp3 (original Exp3 and block Exp3), greedy, or exponential weighted average (for full information model and adversarial MAB setting)
-@author: Anuja
-@version: V2.0
-@assumptions:
-    (1) mobile users perform the network selection simultaneously
-    (2) the goal of all mobile users is the same
-    (4) linear capacity scaling laws; the bandwidth is shared equally among mobile users
 '''
 
 DEBUG = 0              # 1 - only output; 2 - more details; 3 - input() after each print statement to wait for user to press a key to continue
