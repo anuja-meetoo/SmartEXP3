@@ -1,4 +1,11 @@
-Simulates the selection of wireless networks by time-synchroized devices in three settings, namely: (1) a static setting where all devices start the algorithm at the same time and have access to the same set of networks; (2) a dynamic setting where some devices enter the service area later and leave earlier than the others; (3) a dynamic setting setting where some devices leave the service area earlier than others; (4) a dynamic setting where devices move across service areas discovering new sets of wireless networks. It is assumed that all clients observe an equal share of a network's bandwidth. The cost of switching networks is measured in terms of delay and is modeled using Johnson's SU distribution for WiFi and Student's t-distribution for cellular, each identified as a best fit to 500 delay values.
+Simulates the selection of wireless networks by time-synchroized devices in the following settings: 
+* A static setting where all devices start the algorithm at the same time and have access to the same set of wireless networks (static_setting directory).
+* A dynamic setting where all devices have access to the same set of wireless networks, but some devices enter the service area later and leave earlier than the others (dynamic_settings directory).
+* A dynamic setting setting where  all devices have access to the same set of wireless networks, but some devices leave the service area earlier than others (dynamic_settings directory).
+* A dynamic setting where devices move across service areas discovering new sets of wireless networks, thus devices may have access to a different set of wireless networks at one point in time (mobility_setting directory). 
+* A static setting where all devices start the algorithm at the same time and have access to the same set of wireless networks, but some devices use Smart EXP3 while others leverage a greedy policy.
+
+It is assumed that all clients observe an equal share of a network's bandwidth. The cost of switching networks is measured in terms of delay and is modeled using Johnson's SU distribution for WiFi and Student's t-distribution for cellular, each identified as a best fit to 500 delay values.
 
 # Running the simulation
 1. Set the values of the following parameters in the file simulation.py:
