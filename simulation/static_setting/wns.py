@@ -1,11 +1,5 @@
 '''
 @description: Implements a number of approaches to perform a wireless network selection
-@author: Anuja
-@version: V2.0
-@assumptions:
-    (1) mobile users perform the network selection simultaneously
-    (2) the goal of all mobile users is the same
-    (4) linear capacity scaling laws; the bandwidth is shared equally among mobile users
 '''
 
 DEBUG = 0              # 1 - only output; 2 - more details; 3 - input() after each print statement to wait for user to press a key to continue
