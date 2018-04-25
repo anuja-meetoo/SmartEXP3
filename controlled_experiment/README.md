@@ -160,3 +160,8 @@ The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](http
    ```
    
    Per time slot data will be saved in the file \<hostname>_\<algorithmName>_run\<run_index>.csv (e.g. rpi_1_SmartEXP3_run1.csv) and sent to the remote machine (running the secondary server) at the end of the experiment).
+
+## Experiment data
+The output files from the following experiments are provided:
+* All devices using Smart EXP3 in a static setting where are devices start .
+
