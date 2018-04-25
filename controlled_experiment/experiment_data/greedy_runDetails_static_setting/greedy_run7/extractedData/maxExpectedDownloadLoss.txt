@@ -1,3 +1,0 @@
-Max expected download: 27777.240218031544
-Loss due to switching cost: 30.151677083409204
-Loss due to unused resource: 3413.7228969664025
