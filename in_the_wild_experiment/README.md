@@ -63,3 +63,6 @@ It saves per time slot details of the run in a csv file 'experiment_data_<algori
   ```
   ./getCellLoad.py -a "smartEXP3" -n "3G"
   ```
+
+## Experiment data
+Data from 12 runs of the experiment using Smart EXP3 and Greedy is provided in the directory '*experiment_data*'.
