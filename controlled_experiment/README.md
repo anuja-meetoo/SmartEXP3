@@ -1,8 +1,8 @@
+<p align="justify"> 
 Smart EXP3 is evaluated in a 'controlled setting' where we set the bandwidth limit of each AP and we have control over the number of active wireless devices in the environment.
 
 ## Setup
 The setup consists of:
-<p align="justify"> 
   * A main router (Linksys WRT54GL) running OpenWRT (connected to the Internet to download files/packages for setup).
   * 3 WiFi routers (TP-Link TL-WR841N) running OpenWRT (Designated driver - Bleeding Edge, 50140) and operating on 2.4GHz with bandwidth limits set to 4, 7 and 22 Mbps and channels 11, 6 and 1; they are connected to the main router through LAN cables.
   * 2 laptops (primary and secondary), each running a TCP server that continuously sends data to its clients (a request is sent to an alternate server when one fails to respond); they are connected to the main router through cables (using an Ethernet hub as there are not enough ports on the router).
@@ -11,7 +11,6 @@ The setup consists of:
 Devices run Smart EXP3 or Greedy and receive data from the server. They are synchronized, with drift of less than one second. Switching networks is implemented by closing and establishing new network and TCP connections. Gain is estimated based on the download during the time spent in a network. 
 
 We ssh to the devices from one of the laptop running the secondary server. Results from the clients are also sent to this laptop at the end of the experiment.
-</p>
 
 ## Setting up the WiFi APs
 The APs are setup as follows.
@@ -169,3 +168,4 @@ The output files for 10 runs of 2 hours each (i.e., 480 time slots) from each of
 * **Smart EXP3 in a dynamic setting**: All devices employ Smart EXP3 in a *dynamic setting* where all the devices start the algorithm at the same time and have access to the same set of wireless networks. However, 9 of them (namely rpi_6 to rpi_14) leave at the end of 1 hour, i.e., at end of time slot t = 240 (*smartEXP3_runDetails_dynamic_setting* directory).
 * **Greedy in a dynamic setting**: All devices leverage Greedy in a *dynamic setting* where all the devices start the algorithm at the same time and have access to the same set of wireless networks. However, 9 of them (namely rpi_6 to rpi_14) leave at the end of 1 hour, i.e., at end of time slot t = 240 (*greedy_runDetails_dynamic_setting* directory).
 * **Robustness of Smart EXP3 in the presence of "greedy" devices**: The devices operate in a *static setting* where all devices start the algorithm at the same time and have access to the same set of wireless networks. 50% of the devices leverage Smart EXP3 (rpi_8 to rpi_14) while the others (rpi_1 to rpi_7) use Greedy (*smartEXP3_greedy_runDetails_static_setting* directory).
+<p align="justify"> 
