@@ -65,4 +65,4 @@ It saves per time slot details of the run in a csv file 'experiment_data_<algori
   ```
 
 ## Experiment data
-Data from 12 runs of the experiment using Smart EXP3 and Greedy is provided in the directory '*experiment_data*'.
+Data is provided for 12 runs of the experiment while using Smart EXP3 and Greedy in the directory '*experiment_data*'.
