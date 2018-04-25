@@ -1,4 +1,4 @@
-<p align="justify"> 
+<dt>
 Smart EXP3 is evaluated in a 'controlled setting' where we set the bandwidth limit of each AP and we have control over the number of active wireless devices in the environment.
 
 ## Setup
@@ -168,4 +168,4 @@ The output files for 10 runs of 2 hours each (i.e., 480 time slots) from each of
 * **Smart EXP3 in a dynamic setting**: All devices employ Smart EXP3 in a *dynamic setting* where all the devices start the algorithm at the same time and have access to the same set of wireless networks. However, 9 of them (namely rpi_6 to rpi_14) leave at the end of 1 hour, i.e., at end of time slot t = 240 (*smartEXP3_runDetails_dynamic_setting* directory).
 * **Greedy in a dynamic setting**: All devices leverage Greedy in a *dynamic setting* where all the devices start the algorithm at the same time and have access to the same set of wireless networks. However, 9 of them (namely rpi_6 to rpi_14) leave at the end of 1 hour, i.e., at end of time slot t = 240 (*greedy_runDetails_dynamic_setting* directory).
 * **Robustness of Smart EXP3 in the presence of "greedy" devices**: The devices operate in a *static setting* where all devices start the algorithm at the same time and have access to the same set of wireless networks. 50% of the devices leverage Smart EXP3 (rpi_8 to rpi_14) while the others (rpi_1 to rpi_7) use Greedy (*smartEXP3_greedy_runDetails_static_setting* directory).
-<p align="justify"> 
+</dt>
