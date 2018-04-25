@@ -162,6 +162,9 @@ The use of [Terminator](https://linux.die.net/man/1/terminator) or [iTerm2](http
    Per time slot data will be saved in the file \<hostname>_\<algorithmName>_run\<run_index>.csv (e.g. rpi_1_SmartEXP3_run1.csv) and sent to the remote machine (running the secondary server) at the end of the experiment).
 
 ## Experiment data
-The output files from the following experiments are provided:
-* All devices using Smart EXP3 in a static setting where are devices start .
-
+The output files for 10 runs of 2 hours each (i.e., 480 time slots) from each of the following experiments are provided:
+* **Smart EXP3 in a static setting**: All devices leverage Smart EXP3 in a *static setting* where each of the devices start the algorithm at the same time and have access to the same set of wireless networks (*smartEXP3_runDetails_static_setting* directory).
+* **Greedy in a static setting**: All devices use Greedy in a *static setting* where each of the devices start the algorithm at the same time and have access to the same set of wireless networks (*greedy_runDetails_static_setting* directory).
+* **Smart EXP3 in a dynamic setting**: All devices employ Smart EXP3 in a *dynamic setting* where all the devices start the algorithm at the same time and have access to the same set of wireless networks. However, 9 of them (namely rpi_6 to rpi_14) leave at the end of 1 hour, i.e., at end of time slot t = 240 (*smartEXP3_runDetails_dynamic_setting* directory).
+* **Greedy in a dynamic setting**: All devices leverage Greedy in a *dynamic setting* where all the devices start the algorithm at the same time and have access to the same set of wireless networks. However, 9 of them (namely rpi_6 to rpi_14) leave at the end of 1 hour, i.e., at end of time slot t = 240 (*greedy_runDetails_dynamic_setting* directory).
+* **Robustness of Smart EXP3 in the presence of "greedy" devices**: The devices operate in a *static setting* where all devices start the algorithm at the same time and have access to the same set of wireless networks. 50% of the devices leverage Smart EXP3 (rpi_8 to rpi_14) while the others (rpi_1 to rpi_7) use Greedy (*smartEXP3_greedy_runDetails_static_setting* directory).
